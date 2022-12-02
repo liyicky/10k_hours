@@ -27,7 +27,7 @@ RSpec.describe Post, type: :model do
         let(:post) { build :post, meta_description: nil }
 
         it 'should return the truncated context' do
-          expect(post.truncated_preview).to eq('The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in t...')
+          expect(post.truncated_preview.length).to eq(280)
         end
       end
     end
@@ -96,7 +96,7 @@ RSpec.describe Post, type: :model do
 
   # TODO: These tests are not working. Look at Post.dollars_per_hour
   # context 'hours have values <= 0' do
-  #   before do
+  #   before doq
   #     create :post, hours: 0, dollars: 3, visibility: 'public'
   #   end
 
